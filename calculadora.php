@@ -1,11 +1,11 @@
 <?php
 
-// + - * ^ % /
+// + - * ^ % / pot numPar
 
 
-$value1 = "2";
-$value2 = "1";
-$operation = "^";
+$value1 = "100"; // porcentagem
+$value2 = "100"; // preço
+$operation = "ma";
 
 $result = 0;
 
@@ -35,14 +35,27 @@ if ($operation == "^"){
     $result = $value1 ** $value2; //
 }
 
+
+if ($operation == "perc"){
+
+    $desconto = ($value1 * $value2) / 100; // 10
+    $result = $value2 - $desconto;
+}
     
-if ($operation == "%")  {
+if ($operation == "perc+"){
 
-    $result = $value1 % $value2; //
-}  
+    $desconto = ($value1 * $value2) / 100; // 10
+    $result = $value2 + $desconto;
+}
+    
+
+if ($operation == "ma"){
+
+    $result = ($value1 + $value2) / 10; // 10
+    
+
+}
 
 
 
-
-
-echo $result; // 20
+    echo $result; // 20
