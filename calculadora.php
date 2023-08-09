@@ -1,6 +1,6 @@
 <?php
 
-// + - * ^ % / pot numPar
+// + - * ^ % / pot numPar index
 
 
 $value1 = "100"; // porcentagem
@@ -56,6 +56,62 @@ if ($operation == "ma"){
 
 }
 
+// echo $result; // 20
+
+    for ($c = 0; $c < 10; $c++) {
+
+        //echo "For: o valor de C é {$c}<br>";
+    }
 
 
-    echo $result; // 20
+    
+    $c = 0;
+    
+    while ($c < 10) {
+
+       //echo "While:o valor de C é {$c}<br>";
+        $c++;
+    }
+
+
+
+    $num = 10;
+
+    for ($i = 0; $i <= 10; $i++) {
+        $resultado = ($num * $i);
+       // echo "{$num} * {$i} = ". $resultado ."<br>" ;
+    }
+
+
+
+    $media = 6;
+
+
+    $prova = 4.8;
+    $peso = 5;
+
+    $prova2 = 1.5;
+    $peso2 = 3;
+
+    $prova3 = 2;
+    $peso3 = 2;
+
+    $numerador = ($prova * $peso) + ($prova2 * $peso2) + ($prova3 * $peso3);
+
+    $denominador = ($peso + $peso2 + $peso3);
+
+    $MP = $numerador / $denominador;
+
+    if ($MP >= $media) {
+        echo "Aluno Aprovado com a média {$MP}";
+    } else {
+        echo "Aluno Reprovado com a média {$MP}";
+    }
+
+
+
+
+
+
+
+
