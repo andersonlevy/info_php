@@ -87,10 +87,10 @@ if ($operation == "ma"){
     $media = 6;
 
 
-    $prova = 4.8;
+    $prova = 7;
     $peso = 5;
 
-    $prova2 = 1.5;
+    $prova2 = 3;
     $peso2 = 3;
 
     $prova3 = 2;
@@ -103,10 +103,83 @@ if ($operation == "ma"){
     $MP = $numerador / $denominador;
 
     if ($MP >= $media) {
-        echo "Aluno Aprovado com a média {$MP}";
+       // echo "Aluno Aprovado com a média {$MP}";
     } else {
-        echo "Aluno Reprovado com a média {$MP}";
+        //echo "Aluno Reprovado com a média {$MP}";
     }
+
+
+
+        $notas = [5, 10, 4];
+        $smtotal = 0;
+
+        for($i = 0; $i < count($notas); $i++){
+            $smtotal += $notas[$i];
+        }
+
+
+        $resultado = $smtotal / count($notas);
+
+        if($resultado >= 6){
+            //echo "Aprovado, média final {$resultado}";
+        }else{
+            //echo "Reprovado, média final {$resultado}";
+        }
+
+
+        $mes = [
+
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+
+            $numMes = 22;
+
+        if($numMes >=1 && $numMes <=12){
+
+            //echo $mes[$numMes - 1];
+
+            
+        }else{
+
+            //echo "Mês inválido";
+        }
+
+
+
+        //Calcular os 1 primeiros numeros primos
+        // 1 - 9
+
+        $numero = 5;
+        $divisor = 5;
+        //$contPrimos = 0;
+        $arrayPrimos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+
+
+        //while($contPrimos <= 1) {
+
+            $resto = $numero % $divisor; // 0
+
+            if ($resto != 0) {
+
+                // sempre que encontrar um primo adiciona no array.
+                array_push($arrayPrimos, $numero);
+                echo "È primo"($numero)
+
+            }else{ echo "Não é primo"($numero);
+
+                
+            }   
+            //$divisor++;0
+
+        
+
+
+
+    
+
+
+
 
 
 
