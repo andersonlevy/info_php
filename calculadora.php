@@ -180,51 +180,67 @@ while($contPrimos < 1) {
     //Dica: utilizar a funcao "explode" do php para quebrar a hora em partes(array)
 
 
-    $acrescimo = 5;
+    $acrescimos = 0;
     $horaInicial = '16:00:00';
     $horaFinal = '17:30:00';
 
-    $arrHora = explode(":",$horaInicial);
+    $arrHora = explode(":", $horaInicial);
     $hora = $arrHora[0];
     $minutos = $arrHora[1];
     $segundos = $arrHora[2];
-
-
+ 
     $horaEmSegundos = $hora * 3600;
     $minutosEmSegundos = $minutos * 60;
-
+    
     $totalInicialEmSegundos = $horaEmSegundos + $minutosEmSegundos + $segundos;
 
+    $arrHora = explode(":", $horaFinal);
+   $horaFinal = $arrHora[0];
+   $minutosFinal = $arrHora[1];
+   $segundosFinal = $arrHora[2];
 
-
-
-    $arrHora = explode(":",$horaFinal);
-    $horaFinal = $arrHora[0];
-    $minutosFinal = $arrHora[1];
-    $segundosFinal = $arrHora[2];
-
-
-    $horaEmSegundos = $horaFinal * 3600;
-    $minutosEmSegundos = $minutosFinal * 60;
-
-    $totalFinalEmSegundos = $horaEmSegundos + $minutosEmSegundos + $segundosFinal + $acrescimo;
-
-    $tempoDeJogo = ($totalFinalEmSegundos - $totalInicialEmSegundos) / 60;
-
-
-
-    $tempoTotalComAcrescimo = ($tempoDeJogo + $acrescimo);
-
-    echo "O tempo decorrido de jogo com acréscimo foi de {$tempoTotalComAcrescimo}";
-
-
+   $horaFinalEmSegundos = $horaFinal * 3600;
+   $minutosFinalEmSegundos = $minutosFinal * 60;
    
-   
-    // 2 considerar o algoritimo anterior e implementar a logica para um jogo que comeca em um dia e termina no outro.
+   $totalFinalEmSegundos = $horaFinalEmSegundos + $minutosFinalEmSegundos + $segundosFinal;
 
-    $acrescimos = 5;
+   $tempoDoJogo = ($totalFinalEmSegundos - $totalInicialEmSegundos) /60;
+    //echo "o Resultado final é: $tempoDoJogo";
+    
+
+    // calcular o tempo de jogo de um dia para o outro 
+
+    $acrescimos = 0;
     $horaInicial = '23:00:00';
     $horaFinal = '00:30:00';
 
+    $arrHora = explode(":", $horaInicial);
+    $hora = $arrHora[0];
+    $minutos = $arrHora[1];
+    $segundos = $arrHora[2];
     
+    $diaEmSegundos = 86400;          
+    $horaEmSegundos = $hora * 3600;
+    $minutosEmSegundos = $minutos * 60;
+    
+    $totalInicialEmSegundos =  $horaEmSegundos + $minutosEmSegundos + $segundos;
 
+    $arrHora = explode(":", $horaFinal);
+   $horaFinal = $arrHora[0];
+   $minutosFinal = $arrHora[1];
+   $segundosFinal = $arrHora[2];
+
+   $horaFinalEmSegundos = $horaFinal * 3600;
+   $minutosFinalEmSegundos = $minutosFinal * 60;
+   
+   $totalFinalEmSegundos =  $horaFinalEmSegundos + $minutosFinalEmSegundos + $segundosFinal ;
+
+   $tempoDoJogo = ($totalFinalEmSegundos - $totalInicialEmSegundos) / 60 ;
+
+   if ($tempoDoJogo <= 0 ) {
+      
+        $difinicial =  $diaEmSegundos - $totalInicialEmSegundos;
+        $tempoDoJogo = ($difinicial + $totalFinalEmSegundos)/60 ;
+   }
+    
+   echo "<br>o Resultado é: {$tempoDoJogo}<br>";
