@@ -6,15 +6,14 @@
     Dica: Utilizar laço de repetição.
 */
 
-$numero = 5;
 // $arrayFatorial = [5, 4, 3, 2, 1];
-$soma = 0;
-$fat = 0;
+
+$numero = 5;
+$soma = 1;
 
 while($numero > 1) {
-    $fat *= $numero;
-    $soma += $fat;
-    $numero = $numero -1;
+    $soma *= $numero;
+    $numero--;
 }
 
 echo "o fatorial  é : {$soma}";
