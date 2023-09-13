@@ -1,7 +1,7 @@
 <?php
 
 $operador = '+';
-$valor1 = 1000 ;
+$valor1 = 2000 ;
 $valor2 = 20 ;
 
 $resultado = calcular($operador, $valor1, $valor2);
