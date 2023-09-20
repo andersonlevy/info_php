@@ -1,85 +1,69 @@
 <?php
 
-/*se não for divisível por 4, não é bissexto
-se for divisível por 4:
-se for divisível por 100, só é bissexto se também for divisível por 400
-se não for divisível por 100, é bissexto. 
-
-Os anos terminados em 00 serão bissextos se a divisão deles por 400 for exata, isto é, o resto da divisão precisa ser igual a zero. 
+/*
+ Implementar a logica de um calendario,
+ considerando os dias validos para cada mes
+ e os anos bissexto. Caso for informada uma data invalida,
+ corrigir para proxima data valida, Ex.: 31/04/1990 => 01/05/1990;
+ E quando for ano bissexto informar que o ano é bissexto,
+ Ex.: 2022 => O ano é bissexto.
+ Ex.: 2100 => O ano NÃO é bissexto.
 */
+                          
+$dataStr = "27/02/2100";
+$data = explode("/", $dataStr);
+$dia = (int) $data[0];
+$mes = (int) $data[1];
+$ano = (int) $data[2]; // '1990' => 1990
 
-
-
-    //$year = date('Y');
-    $year = "2023";
-
-    if (($year % 4 == 0) && ($year % 100 != 0 || $year % 400 == 0)) {
-        echo "$year é Bissexto";
-    } else {
-        echo "$year Não é Bissexto";
-}
-
-
-
-
-
-    
-    $dataStr = "29/05/1990";
-    $data  = explode("/", $dataStr);
-    $dia = $data[0];
-    $mes = $data[1];
-    $ano = $data[2];
-    
-
-        if($dia < 1 || $dia > 31){
-            $dia = 1;
-
-        }
-
-
-        if($mes < 1 || $mes > 12){
-            $mes = 1;
-
-        }
-
-
-        $meses30dias = [4, 6, 9, 11];
-        $meses31dias = [1, 3, 5, 7, 8, 10, 12];
-
-
-        if (in_array($mes, $meses30dias) && $dia > 30) {
-            $dia = 1;
-            $mes += 1;
-        }
-
-        if ($mes == 2 && $dia >= 28) {
-            $dia = 28;
-
-            if (isBissexto($ano)) {
-                $dia = 29;
-            }
-        }
+$meses30dias = [4, 6, 9, 11];
+$meses31dias = [1, 3, 5, 7, 8, 10, 12];
 
 function isBissexto($ano) {
-    if (($ano % 4 == 0) && ($ano % 100 != 0) && ($ano % 400 == 0)){
+    if ( ($ano % 4 == 0) && ($ano % 100 != 0 || $ano % 400 == 0) ) {
         return true;
     } else {
         return false;
     }
 }
 
+// ajuste para dias invalidos
+    if ($dia < 1 || $dia > 31) {
+    $dia = 1;
+}
 
-      
-        
+// ajuste para meses invalidos
+    if ($mes < 1 || $mes > 12) {
+    $mes = 1;
+}
+
+    if ($mes == 2 && $dia >= 28) {
+    $dia = 28;
+
+    if (isBissexto($ano)) {
+        $dia = 29;
+    }
+}
+
+    if (in_array($mes, $meses30dias) && $dia > 30 ) {
+    $dia = 1;
+    $mes += 1;
+}
+
+// restante da logica aqui
+
+$bissextoStr = "O ano {$ano} NÃO é bissexto.";
+
+    if (isBissexto($ano)) {
+    $bissextoStr = "O ano {$ano} é bissexto.";
+}
 
 
 
 
 
-    /*$diaDoAno = " ";
-    $totalDiasNoAno = date('z'); //total dias no ano
-    $dataAtual = date ('d/m/Y'); //dia, mês, ano
-    $diasRestantes = 0;
+// 32/05/1990 => 01/06/1990 (Corrigi para uma data valida).
+$dataStr = "{$dia}/{$mes}/{$ano}"; // 01/06/1990
 
-    echo $totalDiasNoAno;
-    */
+echo "A data informada {$dataStr}. {$bissextoStr}";
+// A data informada 01/06/1990. O ano 1990 NÃO é bissexto.
