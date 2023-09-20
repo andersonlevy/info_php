@@ -2,17 +2,17 @@
 // Encontrar o maior valor em um array.
 // Exibir esse valor ao final para o usuario.
 
-$nums = [ 10, 80, 5, 14, 90, 29, 99, 1]; // 0 - 7 (8)
+$nums = [ 10, 80, 5, 14, 90, 29, 99, 1]; // 0 - 7 (8) indices
 
 //Implementar a logica para encontrar o 99;
 //WHILE || for e IF
 
-$i =0;
+$i = 0;
 $maior = 0;
 
 while($i < count($nums)) {
     
-
+if($i = 10 > 0)
 
     $i++;
 }
