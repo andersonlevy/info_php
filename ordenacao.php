@@ -1,32 +1,36 @@
-<?php
-// Encontrar o maior valor em um array.
-// Exibir esse valor ao final para o usuario.
+ <?php
+/* Encontrar o maior valor em um conjunto de numeros em um array.
+    E exibir esse valor ao final para o usuario.
+    Implementar a logica para encontrar o 99;
+    WHILE || FOR && IF
+*/
+$nums = [10, 80, 5, 14, 90, 29, 500, 1]; // 0 - 7 (8)
+$tamanhoArray = count($nums); // 8
+$maior =0;
 
-$nums = [ 10, 80, 5, 14, 90, 29, 99, 1]; // 0 - 7 (8) indices
+for($i = 0; $i < $tamanhoArray; $i++) {
+    $posicaoAtual = $nums[$i];
 
-//Implementar a logica para encontrar o 99;
-//WHILE || for e IF
-
-$i = 0;
-$maior = 0;
-
-while($i < count($nums)) {
-    
-if($i = 10 > 0)
-
-    $i++;
+    if ($posicaoAtual  > $maior) {
+        $maior = $posicaoAtual;
+    }
 }
 
-
-
+echo $maior;
 
 /*
-2-) Por meio da tecnica de ordenacao Bubble sort,
-ordene o array abaixo em ordem crescente.
-Dica: Utilize o laco de repeticao FOR, pode ser necessario mais de um 
-e tambem deve ser utilizado IF.
+2-) Por meio da tecnica de ordenacao Bubble Sort,
+    ordene o array abaixo em ordem crescente. 
+    Dica: Utilize o laço de reptição FOR, pode ser necessario mais de um
+    e tambem deve ser utilizado um IF.
 */
+// 8, 12, 23, 34, 45, 67, 98
+$nums = [34, 12, 98, 45, 23, 67, 8];
+$tamanhoArray = count($nums);
 
-//$nums = [34, 12, 98, 45, 23, 67, 8];
+for($i = 0; $i < $tamanhoArray; $i++) {
+    for ($j =  $tamanhoArray / 2; $j < 1 ; $j++) {
 
-//sort($nums);
+    }
+}
+
